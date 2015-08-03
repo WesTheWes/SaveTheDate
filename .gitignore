@@ -9,4 +9,4 @@ Thumbs.db
 gulpfile.js
 *.pyc
 config.rb
-.sqlite
+*.sqlite

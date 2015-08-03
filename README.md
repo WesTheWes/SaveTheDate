@@ -20,6 +20,8 @@ their invitation.
 A simple, nice looking save the date. Tells people when the wedding will be, and allows them to
 RSVP for themselves and their family.
 
+# Components
+
 ## Frontend Components
 
 - HTML5
