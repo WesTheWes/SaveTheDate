@@ -10,3 +10,4 @@ gulpfile.js
 *.pyc
 config.rb
 *.sqlite
+*.env
