@@ -1,0 +1,12 @@
+/bower_components/*
+/.sass-cache/*
+*.DS_Store
+/stylesheets/*
+venv
+Gemfile
+Gemfile.lock
+Thumbs.db
+gulpfile.js
+*.pyc
+config.rb
+.sqlite

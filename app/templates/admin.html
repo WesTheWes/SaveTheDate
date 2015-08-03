@@ -1,0 +1,96 @@
+{% extends "admin-base.html" %}
+
+{% block content %}
+
+<div class="admin">
+
+    <h1>Groups</h1>
+    <div class="content">
+        <div class="fill">
+            {% for message in get_flashed_messages() %}
+            <div class="alert center">
+                {{ message }}
+            </div>
+            {% endfor %}
+
+            {% if guest_form.errors %}
+            <div class="alert center">
+                You forgot to type in your
+                {% for error in guest_form.errors %}
+                    {{ error }}{% if not loop.last %} and {% endif %}
+                {% endfor %}!
+            </div>
+            {% endif %}
+        </div>
+        {% if groups %}
+            {% for group in groups %}
+                <div class="group-container">
+                    <input class="accordion" id="group_{{ group.id }}" type="checkbox" {% if group.id==group_id %}checked{% endif %}/>
+                    <label for="group_{{ group.id }}">
+                        <div class="row {{ loop.cycle('odd', 'even')}}">
+                            <div class="group name">{{ group.name }}</div>
+                            <div class="group guests">{% if group.responded %} {{ group.guests.count()}}
+                            {% else %} No Response{% endif %}</div>
+                            <div class="group buttons">
+                                <a class="button center group edit fill"href="{{ url_for('auth.edit_group', id=group.id )}}">Edit</a>
+                                <a class="button center group delete fill" href="{{ url_for('auth.delete_group', id=group.id )}}">Delete</a>
+                            </div>
+                        </div>
+                    </label>
+                    <div class="accordion-container">
+                        <div class="accordion-content">
+                            {% for guest in group.guests %}
+                                <div class="row {{ loop.cycle('odd', 'even')}}">
+                                    <div class="guest name">{{ guest.name }}</div>
+                                    <div class="guest coming">{% if group.responded %} {{ guest.coming }}
+                                    {% else %} No Response{% endif %}</div>
+                                    <a class="button center guest delete" href="{{url_for('auth.delete_guest', id=guest.id)}}">Delete</a>
+                                </div>
+                            {% endfor %}
+                            <div class="add-guest">
+                                <form action="{{ url_for('auth.add_guest', id=group.id)}}" method="post">
+                                    {{ guest_form.csrf_token }}
+                                    <div class="row">
+                                        {% if group.id==group_id %}
+                                            {{ guest_form.guest_name(autofocus='') }}
+                                            {% else%}
+                                            {{ guest_form.guest_name }}
+                                        {% endif %}
+                                        {{ guest_form.submit }}
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="row"><h2 class="center">No Groups Added Yet!</h2></div>
+        {% endif %}
+    </div>
+    <div id="add-group">
+        {% if group_form.errors %}
+        <div class="alert center">
+            You forgot to type in your
+            {% for error in group_form.errors %}
+                {{ error }}{% if not loop.last %} and {% endif %}
+            {% endfor %}!
+        </div>
+        {% endif %}
+        <form method="post" action="{{ url_for('auth.admin') }}">
+            {{ group_form.csrf_token }}
+            <div class="row">
+
+            {% if add_group %}
+                {{ group_form.group_name(placeholder=group_form.group_name.name, autofocus='') }}
+                {% else %}
+                {{ group_form.group_name(placeholder=group_form.group_name.name) }}
+            {% endif %}
+
+            {{ group_form.email(placeholder=group_form.email.name) }}
+            {{ group_form.submit }}</div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

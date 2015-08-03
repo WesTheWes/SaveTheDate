@@ -1,0 +1,41 @@
+/* === VARIABLES === */
+
+// Colors
+
+$ivory: #fffbdc;
+$blue-green: #3dffcc;
+$ocean: #49a3c9;
+$brown: #403328;
+$warning: #DA4C4C;
+$gold: gold;
+
+// Text
+
+$base-text-size: 32px;
+$button-padding: 0.5em;
+
+
+// Grid
+
+$grid-columns: 12;
+$grid-padding: 2%;
+$column-width: (100% - 11*$grid-padding)/$grid-columns;
+$container-width: 1280px;
+
+// Breakpoints
+
+$break-small: 640px;
+$break-med: 960px;
+$break-large: 1280px;
+
+// Animation
+
+$form-anim-speed: 0.2s;
+$nav-anim-speed: 0.3s;
+$accordion-anim-speed: 0.5s;
+
+// Admin
+
+$sidebar-small: 4;
+$sidebar-med: 3;
+$sidebar-large: 2;

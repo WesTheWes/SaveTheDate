@@ -1,0 +1,189 @@
+/* === GLOBAL STYLES === */
+
+@import "compass/css3";
+@import "compass/css3/user-interface";
+
+* {
+    @include box-sizing(border-box);
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: url("../images/beach.jpg") fixed no-repeat center top;
+    background-size: cover;
+}
+
+body,input, p, label {
+    font-size: $base-text-size;
+    line-height: $base-text-size*1.125;
+    font-family: Amatic, Helvetica, sans-serif;
+    color: $brown;
+}
+
+h1, h2, h3, h4, h5 {
+    color: $ivory;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+h1 {
+    line-height: 1.5em;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+table {
+    width: 100%;
+}
+
+td, th {
+    padding: 0.25em;
+}
+
+th {
+    text-align: left;
+    font-weight: bold;
+}
+
+/************
+=== Forms ===
+************/
+
+input[type="text"], input[type="password"] {
+    padding: 0.5em;
+    background-color: rgba($ivory, 0.5);
+    border: none;
+    outline: none;
+
+    @include transition(all $form-anim-speed ease-in-out);
+
+    &:focus {
+        border: none;
+        outline: 1px solid rgba($ivory,0.5);
+        box-shadow: 0 0 4px 2px rgba($ocean, 0.5);
+        background-color: rgba($ivory, 0.8);
+    }
+
+    @include input-placeholder {
+        color: $ivory;
+    }
+}
+
+
+input[type="checkbox"].default-checkbox, input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+
+    & + label{
+        margin-left: 10px;
+        position: relative;
+        cursor: pointer;
+        padding: 0px;
+        @include user-select(none);
+
+        &:before {
+            content: '';
+            margin-right: 10px;
+            height: 0.5em;
+            width: 0.5em;
+            display: inline-block;
+            vertical-align: middle;
+            border: 2px solid $brown;
+            border-radius: 4px;
+        }
+
+        &:after {
+            @include transition(all $form-anim-speed ease-in-out);
+            content: "\2714";
+            position: absolute;
+            left: 1px;
+            top: -3px;
+            opacity: 0;
+        }
+    }
+
+    &:focus + label:before, &:hover +label:before {
+        background-color: rgba($ivory, 0.8);
+    }
+
+
+
+    &:checked + label:after {
+        opacity: 1;
+    }
+}
+
+input[type="submit"], button, .button {
+    background-color: rgba($brown, 0.9);
+    border: none;
+    outline: none;
+    color: $ivory;
+    padding: $button-padding;
+    &.large{
+        padding: 0.75em 1em;
+        font-size: 1.5em;
+    }
+    @include transition(all $form-anim-speed ease-in-out);
+    &:hover, &:focus {
+        color: $brown;
+        background-color: rgba($ivory, 0.8);
+    }
+    &.delete {
+        background-color: $warning;
+        color: $ivory;
+        &:hover, &:focus {
+           background-color: darken($warning, 10%);
+        }
+    }
+}
+
+/**************
+=== General ===
+**************/
+
+.small-radius {
+    border-radius: 0.125em;
+}
+
+.bottom-large {
+    margin-bottom: -1.5em;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.alert {
+    background-color: rgba($brown,0.9);
+    color: $ivory;
+}
+
+.primary {
+    color: $ivory;
+}
+
+.secondary {
+    color: $brown;
+}
+
+.container {
+    overflow-x:hidden;
+    height: 100%;
+}

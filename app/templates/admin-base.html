@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block header %}
+
+    <header>
+        <a href="#" id="toggle-nav"><i class="fa fa-bars"></i></a>
+        <h1>KaplanEverAfter</h1>
+        <nav>
+            <ul class="center">
+                <a href="{{url_for('auth.admin')}}"><li>Groups</li></a>
+                <a href="{{url_for('auth.admin', add_group='true')}}"><li>Add Group</li></a>
+                <a href="{{url_for('auth.emails')}}"><li>Emails</li></a>
+                <a href="{{url_for('auth.logout')}}"><li>Logout</li></a>
+            </ul>
+        </nav>
+    </header>
+
+{% endblock %}

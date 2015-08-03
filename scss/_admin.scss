@@ -1,0 +1,233 @@
+/* === ADMIN STYLES === */
+
+@import "compass/css3";
+
+nav {
+    z-index: 100;
+    background-color: rgba($ivory, 0.8);
+    position: fixed;
+    top: 0;
+    left: -80%;
+    height: 100%;
+    width: 80%;
+    @include transition(all $nav-anim-speed);
+    @include transform(translate3d(0, 0, 0));
+
+    @media screen and (min-width: $break-small){
+        background-color: transparent;
+        width: auto;
+        float: right;
+        @include transform(translate3d(0,0,0));
+        position: static;
+        height: auto;
+        @include transition(none);
+    }
+
+    a li {
+        color: $ivory;
+        background-color: rgba($brown, 0.9);
+        margin-bottom: 0.25em;
+        display: block;
+        padding: 1em;
+        @include transition(all $form-anim-speed);
+
+        &:hover {
+            background-color: rgba($ivory, 0.9);
+            // border-bottom: 4px solid rgba($ivory, 0);
+            color: $brown;
+        }
+
+        @media screen and (min-width: $break-small) {
+            display: inline-block;
+            margin: 0.25em;
+            padding: 0.3125em;
+        }
+
+    }
+
+    a:last-child li {
+        border-bottom: none;
+    }
+}
+
+.open nav {
+    @include transform(translate3d(100%,0,0));
+    @media screen and (min-width: $break-small) {
+        @include transform(translate3d(0,0,0));
+    }
+}
+
+header {
+    z-index: 100;
+    background: rgba($ivory, 0.8);
+    position: fixed;
+    top:0;
+    width: 100%;
+    #toggle-nav {
+        font-size: 1.25em;
+        float: left;
+        padding: 0 0.25em;
+        line-height: 1.5em;
+        color: $ivory;
+
+        @media screen and (min-width: $break-small){
+            display: none;
+        }
+    }
+    h1 {
+        float:right;
+        font-size: 1.25em;
+        display: inline-block;
+        text-align: right;
+        padding: 0 0.5em;
+        @media screen and (min-width: $break-small){
+            float: left;
+            font-size: 1.5em;
+        }
+    }
+}
+
+.admin {
+    margin: 2.25em auto 0 auto;
+    position:relative;
+    z-index: 1;
+    max-width: $container-width;
+    h1 {
+        text-align: center;
+    }
+}
+
+.content {
+    width: 100%;
+    background-color: rgba($ivory, 0.5);
+}
+
+.group, .guest {
+    padding-top: $button-padding/2;
+    padding-bottom: $button-padding/2;
+    @include span(6);
+    text-align: center;
+    @media screen and (min-width: $break-small){
+        text-align: left;
+        @include span(4);
+        padding: $button-padding;
+    }
+    &.name {
+        font-weight: bold;
+    }
+    &.buttons {
+        @include span(12);
+        @media screen and (min-width: $break-small){
+            @include span(4);
+        }
+        padding:0;
+    }
+    &.button {
+        text-align: center;
+    }
+}
+
+.group.button {
+    @include span(6);
+}
+
+.guest.button{
+    @include span(12);
+    @media screen and (min-width: $break-small){
+        @include span(4);
+    }
+}
+
+#add-group input {
+    @include span(6);
+    @media screen and (min-width: $break-small){
+        @include span(4);
+    }
+    &[type="submit"] {
+        @include span(12);
+        @media screen and (min-width: $break-small){
+            @include span(4);
+        }
+    }
+}
+
+.add-guest input {
+    @include span(6);
+}
+
+input.accordion{
+
+    display:none;
+
+    & + label {
+        display: block;
+        @include transition(background-color $nav-anim-speed, color $nav-anim-speed);
+        cursor: pointer;
+        &:hover{
+            background-color: rgba($ivory, 0.5);
+        }
+    }
+
+    & ~ .accordion-container {
+        overflow: hidden;
+        overflow-y: scroll;
+        @include transition(max-height $accordion-anim-speed);
+        max-height: 0;
+        .accordion-content {
+            @include transition(transform $accordion-anim-speed);
+            @include transform(translate3d(0,-30%,0));
+            margin: $grid-padding*2;
+            margin-top:$grid-padding;
+            background-color: rgba($ivory, 0.5);
+        }
+    }
+
+    &:checked {
+        & + label {
+            background-color: rgba($brown,0.8);
+            color: $ivory;
+        }
+
+        & ~ .accordion-container {
+            max-height: 10em;
+            @media screen and (min-width: $break-small){
+                max-height: 20em;
+            }
+            .accordion-content {
+                @include transform(translate3d(0,0,0));
+            }
+        }
+    }
+}
+
+.row.even {
+    background-color: rgba($ivory, 0.3);
+}
+
+.group-edit {
+    .field{
+        @include span(12);
+        @media screen and (min-width: $break-small){
+            @include span(6);
+        }
+        input {
+            width: 100%;
+        }
+        label{
+            text-align:center;
+            @media screen and (min-width: $break-small){
+                text-align:left;
+            }
+        }
+    }
+    .button {
+        @include span(12);
+        margin-top: $grid-padding;
+    }
+}
+
+.edit-guest {
+    input {
+        @include span(6);
+    }
+}

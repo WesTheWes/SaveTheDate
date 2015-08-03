@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="main">
+    <h1 class="center">Please Sign In!</h1>
+    <div class="panel">
+            <div class="fill">
+                {% for message in get_flashed_messages() %}
+                <div class="alert center">
+                    {{ message }}
+                </div>
+                {% endfor %}
+
+                {% if form.errors %}
+                <div class="alert center">
+                    You forgot to type in your
+                    {% for error in form.errors %}
+                        {{ error }}{% if not loop.last %} and {% endif %}
+                    {% endfor %}!
+                </div>
+                {% endif %}
+            </div>
+        <form class="login" autocomplete="off" method="post" action="{{ url_for('auth.login') }}">
+            {{ form.csrf_token }}
+            <div class="row">{{ form.username(class="fill", placeholder=form.username.name) }}</div>
+            <div class="row">{{ form.password(class="fill", placeholder=form.password.name) }}</div>
+            <div class="row center">
+                <div class="checkbox">
+                    {{ form.remember_me(class="default-checkbox") }}{{ form.remember_me.label }}
+                </div>
+            </div>
+
+            <div class="row">{{ form.submit(class="center large bottom-large") }}</div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

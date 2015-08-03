@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="save-the-date {% if show_form == 'true' %}reveal-form{% endif %}">
+    {% include 'invite.html' %}
+    <div class="rsvp rsvp-form">
+
+        <div class="header center">
+            <h1>Save the Date</h1>
+            <div class="info when">July 3rd, 2016</div>
+            <div class="heart"><i class="fa fa-heart"></i></div>
+            <div class="info where">San Diego, CA</div>
+        </div>
+
+        <div class="panel center">
+
+        <div class="row"><h2 class="title-bar center">RSVP</h2></div>
+        {% for message in get_flashed_messages() %}
+
+        <div class="alert fill">{{ message }}</div>
+
+        {% endfor %}
+        {% if group %}
+        <form method="POST" action="{{ url_for('rsvp.guest_rsvp') }}">
+            <div class="row">
+                {{ form.csrf_token }}
+                <div class="guest-rsvp form-header">
+                    <p class="guest-name"><span class="title">Guest</span></p>
+                    <ul>
+                        <li><span class="title">Accept</span></li>
+                        <li><span class="title">Regret</span></li>
+                    </ul>
+                </div>
+                <div class="guests">
+                    {% for field in form %}
+                    {% if field.type == "RadioField" %}
+                    <div class="guest-rsvp">
+                        <p class="guest-name">{{ field.name }}</p>
+                        {{ field }}
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="row">{{ form.submit(class="bottom-large large center") }}</div>
+        </form>
+
+        {% else %}
+
+        <h1 class="center">CHECK YOUR EMAIL MOTHERFUCKER!!!!</h1>
+
+        {% endif %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}

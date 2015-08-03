@@ -1,0 +1,21 @@
+@mixin clearfix {
+
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear:both;
+    }
+}
+
+@mixin span-columns($columns, $centered:false) {
+    width: percentage($columns/$grid-columns);
+    padding: $grid-padding/2;
+    float: left;
+    @if($centered: true) {
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,30 @@
+This site was made by me: Wes Kaplan.
+
+** With These Things **
+
+Backend
+-------
+
+    Flask
+    WTForms
+    itsdangerous
+    flask-login
+    flask-mail
+    sqlalchemy
+
+Frontend
+--------
+
+    HTML5
+    CSS3
+    SASS + Compass
+    javascript
+    jquery
+
+
+***************************
+**                       **
+**     Gina and Wes      **
+**  are gettin married!  **
+**                       **
+***************************

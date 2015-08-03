@@ -1,0 +1,68 @@
+{% extends 'admin-base.html'%}
+{% block content %}
+
+<div class="admin">
+    <h1>Edit Group</h1>
+    <div class="group-edit content">
+        <div class="fill">
+            {% for message in get_flashed_messages() %}
+            <div class="alert center">
+                {{ message }}
+            </div>
+            {% endfor %}
+
+            {% if group_form.errors %}
+            <div class="alert center">
+                You forgot to type in your
+                {% for field, error in group_form.errors.items() %}
+                    {{ field }}{% if not loop.last %} and {% endif %}
+                {% endfor %}!
+            </div>
+            {% endif %}
+        </div>
+        <form method="post" action="{{ url_for('auth.edit_group', id=group.id) }}">
+            {{ group_form.csrf_token }}
+            <div class="row">
+                <div class="edit-group">
+                    <div class="field">{{group_form.group_name.label}}{{ group_form.group_name(placeholder=group_form.group_name.description, value=group.name) }}</div>
+                    <div class="field">{{group_form.email.label}} {{ group_form.email(placeholder=group_form.email.description, value=group.email) }}</div>
+                    {{ group_form.submit(value="Change Group", class="button") }}
+                </div>
+                <a class="button center fill" href="{{ group.link() }}">RSVP Site</a>
+            </div>
+        </form>
+
+        {% if guest_form.errors %}
+        <div class="alert center">
+            You forgot to type in your
+            {% for field, error in guest_form.errors.items() %}
+                {{ field }}{% if not loop.last %} and {% endif %}
+            {% endfor %}!
+        </div>
+        {% endif %}
+
+        <div class="row"><h2 class="center secondary">Guests</h2></div>
+        {% for guest in group.guests %}
+            <form method="post" action="{{ url_for('auth.edit_guest', id=guest.id) }}">
+            {{guest_form.csrf_token}}
+            <div class="row {{ loop.cycle('odd', 'even')}}">
+                <div class="edit-guest">
+                    {{guest_form.guest_name(value=guest.name)}}
+                    {{guest_form.submit(value="Change Guest")}}
+                </div>
+            </div>
+            </form>
+        {% endfor %}
+    </div>
+        <div class="add-guest">
+        <form action="{{ url_for('auth.edit_group', id=group.id)}}" method="post">
+            {{ guest_form.csrf_token }}
+            <div class="row">
+                {{ guest_form.guest_name(placeholder=guest_form.guest_name.description) }}
+                {{ guest_form.submit }}
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

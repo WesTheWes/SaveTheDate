@@ -1,0 +1,9 @@
+Hi {{ group.name }}!
+
+Guess what?! Gina and Wes are gettin married!
+
+It's happening July 3rd, 2016... So click on the following link to RSVP!!!!!!!!
+
+{{ link }}
+
+MMMMMKAY BYE :-P
