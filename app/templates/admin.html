@@ -29,7 +29,7 @@
                     <label for="group_{{ group.id }}">
                         <div class="row {{ loop.cycle('odd', 'even')}}">
                             <div class="group name">{{ group.name }}</div>
-                            <div class="group guests">{% if group.responded %} {{ group.guests.count()}}
+                            <div class="group guests">{% if group.responded %} {{ group.guests.filter_by(coming=True).count() }} of {{ group.guests.count()}} Guests
                             {% else %} No Response{% endif %}</div>
                             <div class="group buttons">
                                 <a class="button center group edit fill"href="{{ url_for('auth.edit_group', id=group.id )}}">Edit</a>
@@ -42,7 +42,8 @@
                             {% for guest in group.guests %}
                                 <div class="row {{ loop.cycle('odd', 'even')}}">
                                     <div class="guest name">{{ guest.name }}</div>
-                                    <div class="guest coming">{% if group.responded %} {{ guest.coming }}
+                                    <div class="guest coming">{% if group.responded %}
+                                        {% if guest.coming == True %}Coming!{% else %}Not Coming...{% endif %}
                                     {% else %} No Response{% endif %}</div>
                                     <a class="button center guest delete" href="{{url_for('auth.delete_guest', id=guest.id)}}">Delete</a>
                                 </div>
@@ -52,9 +53,9 @@
                                     {{ guest_form.csrf_token }}
                                     <div class="row">
                                         {% if group.id==group_id %}
-                                            {{ guest_form.guest_name(autofocus='') }}
+                                            {{ guest_form.guest_name(placeholder=guest_form.guest_name.description, autofocus='') }}
                                             {% else%}
-                                            {{ guest_form.guest_name }}
+                                            {{ guest_form.guest_name(placeholder=guest_form.guest_name.description,) }}
                                         {% endif %}
                                         {{ guest_form.submit }}
                                     </div>
@@ -82,12 +83,12 @@
             <div class="row">
 
             {% if add_group %}
-                {{ group_form.group_name(placeholder=group_form.group_name.name, autofocus='') }}
+                {{ group_form.group_name(placeholder=group_form.group_name.description, autofocus='') }}
                 {% else %}
-                {{ group_form.group_name(placeholder=group_form.group_name.name) }}
+                {{ group_form.group_name(placeholder=group_form.group_name.description) }}
             {% endif %}
 
-            {{ group_form.email(placeholder=group_form.email.name) }}
+            {{ group_form.email(placeholder=group_form.email.description) }}
             {{ group_form.submit }}</div>
         </form>
     </div>

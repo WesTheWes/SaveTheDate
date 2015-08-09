@@ -6,12 +6,12 @@
     <h1>Emails</h1>
     <div class="content">
     <div class="row">
-        <a href="{{url_for('auth.send_all')}}">Send All Emails!</a>
+        <a class="button fill center" href="{{url_for('auth.send_all')}}">Send All Emails!</a>
     </div>
     {% for group in groups %}
         <div class="row">
-            {{ group.name }}
-            <a href="{{url_for('auth.send_invite', id=group.id)}}">Send Email</a>
+            <div class="email group name">{{ group.name }}</div>
+            <div class="email send"><a class="button" href="{{url_for('auth.send_invite', id=group.id)}}">Send Email</a></div>
         </div>
     {% endfor %}
     </div>
