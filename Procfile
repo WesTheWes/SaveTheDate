@@ -1,2 +1,2 @@
-web: python manage.py runserver
+web: python manage.py run
 shell: python manage.py shell
