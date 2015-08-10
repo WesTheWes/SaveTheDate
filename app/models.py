@@ -62,7 +62,7 @@ class Guest(db.Model):
 
     __tablename__ = 'guests'
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(64), unique=True, index=True)
+    name = db.Column(db.String(64), index=True)
     coming = db.Column(db.Boolean())
     group_id = db.Column(db.Integer, db.ForeignKey('groups.id'))
 

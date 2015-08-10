@@ -57,10 +57,11 @@ def add_guest(id):
     guest_form = forms.NewGuest()
     group = Group.query.get_or_404(id)
     if guest_form.validate_on_submit():
-        if Guest.query.filter_by(name=guest_form.guest_name.data).first():
-            flash("This guest already exists!")
+        name=guest_form.guest_name.data
+        if Guest.query.filter_by(name=name, group_id=group.id).first():
+            flash("The guest name %s already exists in this group!" %name)
         else:
-            guest = Guest(name=guest_form.guest_name.data, group_id=group.id)
+            guest = Guest(name=name, group_id=group.id)
             db.session.add(guest)
             db.session.commit()
     else:
