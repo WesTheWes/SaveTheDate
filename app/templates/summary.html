@@ -1,0 +1,28 @@
+{% extends "admin-base.html" %}
+
+{% block content %}
+
+<div class="admin">
+    <div class="summary">
+        <table>
+            <tr>
+                <td>Groups Responded</td>
+                <td>{{groups.query.filter_by(responded=True).count()}} of {{groups.query.count()}}</td>
+            </tr>
+            <tr>
+                <td>Guests Coming</td>
+                <td>{{guests.query.filter_by(coming=True).count()}}</td>
+            </tr>
+            <tr>
+                <td>Guests Declining</td>
+                <td>{{guests.query.filter_by(coming=False).count()}}</td>
+            </tr>
+            <tr>
+                <td>No Response</td>
+                <td>{{guests.query.filter_by(coming=None).count()}}</td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -39,7 +39,7 @@ nav {
 
         @media screen and (min-width: $break-small) {
             display: inline-block;
-            margin: 0.25em;
+            margin: 0.25em 0.0625em;
             padding: 0.3125em;
         }
 
@@ -229,5 +229,32 @@ input.accordion{
 .edit-guest {
     input {
         @include span(6);
+    }
+}
+
+.summary{
+    padding-top: 1em;
+    table {
+        border: 5px solid $ivory;
+        border-collapse: collapse;
+        background: rgba($ivory, 0.5);
+        table-layout: fixed;
+        @include span(10,true);
+        @media only screen and (min-width: $break-small){
+            @include span(6, true);
+        }
+        td {
+            padding: 0.5em;
+            text-align: center;
+            &:last-of-type{
+                border-left: 1px solid $ivory;
+            }
+        }
+        tr {
+            border-bottom: 1px solid $ivory;
+            &:last-of-type{
+                border-bottom: none;
+            }
+        }
     }
 }

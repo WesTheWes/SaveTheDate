@@ -157,3 +157,11 @@ def send_all():
     groups = Group.query.all()
     send_email(groups, 'email')
     return redirect(url_for('auth.emails'))
+
+@auth.route('/admin/summary')
+@login_required
+def summary():
+    groups = Group
+    guests = Guest
+    responded = Guest.query.join(Group, Group.id == Guest.group_id).filter(Group.responded == True)
+    return render_template('summary.html', groups=groups, guests=guests, responded = responded)

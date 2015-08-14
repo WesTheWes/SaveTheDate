@@ -376,7 +376,7 @@ nav a li:hover {
   /* line 26, ../../../scss/_admin.scss */
   nav a li {
     display: inline-block;
-    margin: 0.25em;
+    margin: 0.25em 0.0625em;
     padding: 0.3125em;
   }
 }
@@ -738,6 +738,48 @@ input.accordion:checked ~ .accordion-container .accordion-content {
 /* line 15, ../../../scss/_grid.scss */
 .edit-guest input:first-of-type {
   margin-left: 0;
+}
+
+/* line 235, ../../../scss/_admin.scss */
+.summary {
+  padding-top: 1em;
+}
+/* line 237, ../../../scss/_admin.scss */
+.summary table {
+  border: 5px solid #fffbdc;
+  border-collapse: collapse;
+  background: rgba(255, 251, 220, 0.5);
+  table-layout: fixed;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+  width: 83%;
+}
+@media only screen and (min-width: 640px) {
+  /* line 237, ../../../scss/_admin.scss */
+  .summary table {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 49%;
+  }
+}
+/* line 246, ../../../scss/_admin.scss */
+.summary table td {
+  padding: 0.5em;
+  text-align: center;
+}
+/* line 249, ../../../scss/_admin.scss */
+.summary table td:last-of-type {
+  border-left: 1px solid #fffbdc;
+}
+/* line 253, ../../../scss/_admin.scss */
+.summary table tr {
+  border-bottom: 1px solid #fffbdc;
+}
+/* line 255, ../../../scss/_admin.scss */
+.summary table tr:last-of-type {
+  border-bottom: none;
 }
 
 /* line 1, ../../../scss/_rsvp.scss */
