@@ -261,3 +261,41 @@
         font-size: 2em;
     }
 }
+
+.countdown {
+    margin: 1em auto 0;
+    max-width: 12em;
+    @media only screen and (min-width: $break-large) {
+        max-width: none;
+        padding: 0.25em;
+    }
+}
+
+.time {
+    background-color: rgba($ivory, 0.5);
+    color: $brown;
+    font-size: 2.5em;
+    line-height: 1.5;
+    border-bottom: 3px solid $ivory;
+    &:last-of-type{
+        border-bottom:none;
+    }
+    @media only screen and (min-width: $break-large) {
+        padding: 0 0.25em;
+        border-bottom: none;
+        border-right: 3px solid $ivory;
+        display: inline-block;
+        width: 3.5em;
+        &:last-of-type{
+            border-right:none;
+        }
+    }
+}
+
+h1.home {
+    font-size: 2.5em;
+    line-height: 1.25;
+    @media only screen and (min-width: $break-large) {
+        font-size: 4em;
+    }
+}

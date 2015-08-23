@@ -460,6 +460,8 @@ header h1 {
 
 /* line 105, ../../../scss/_admin.scss */
 .group, .guest {
+  font-family: Helvetica, Sans-Serif;
+  font-size: 24px;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
   float: left;
@@ -485,11 +487,11 @@ header h1 {
     margin-left: 0;
   }
 }
-/* line 115, ../../../scss/_admin.scss */
+/* line 117, ../../../scss/_admin.scss */
 .group.name, .guest.name {
   font-weight: bold;
 }
-/* line 118, ../../../scss/_admin.scss */
+/* line 120, ../../../scss/_admin.scss */
 .group.buttons, .guest.buttons {
   float: left;
   margin-left: 2%;
@@ -502,7 +504,7 @@ header h1 {
   margin-left: 0;
 }
 @media screen and (min-width: 640px) {
-  /* line 118, ../../../scss/_admin.scss */
+  /* line 120, ../../../scss/_admin.scss */
   .group.buttons, .guest.buttons {
     float: left;
     margin-left: 2%;
@@ -513,12 +515,12 @@ header h1 {
     margin-left: 0;
   }
 }
-/* line 125, ../../../scss/_admin.scss */
+/* line 127, ../../../scss/_admin.scss */
 .group.button, .guest.button {
   text-align: center;
 }
 
-/* line 130, ../../../scss/_admin.scss */
+/* line 132, ../../../scss/_admin.scss */
 .group.button {
   float: left;
   margin-left: 2%;
@@ -529,7 +531,7 @@ header h1 {
   margin-left: 0;
 }
 
-/* line 134, ../../../scss/_admin.scss */
+/* line 136, ../../../scss/_admin.scss */
 .guest.button {
   float: left;
   margin-left: 2%;
@@ -541,7 +543,7 @@ header h1 {
   margin-left: 0;
 }
 @media screen and (min-width: 640px) {
-  /* line 134, ../../../scss/_admin.scss */
+  /* line 136, ../../../scss/_admin.scss */
   .guest.button {
     float: left;
     margin-left: 2%;
@@ -553,7 +555,7 @@ header h1 {
   }
 }
 
-/* line 141, ../../../scss/_admin.scss */
+/* line 143, ../../../scss/_admin.scss */
 #add-group input {
   float: left;
   margin-left: 2%;
@@ -564,7 +566,7 @@ header h1 {
   margin-left: 0;
 }
 @media screen and (min-width: 640px) {
-  /* line 141, ../../../scss/_admin.scss */
+  /* line 143, ../../../scss/_admin.scss */
   #add-group input {
     float: left;
     margin-left: 2%;
@@ -575,7 +577,7 @@ header h1 {
     margin-left: 0;
   }
 }
-/* line 146, ../../../scss/_admin.scss */
+/* line 148, ../../../scss/_admin.scss */
 #add-group input[type="submit"] {
   float: left;
   margin-left: 2%;
@@ -587,7 +589,7 @@ header h1 {
   margin-left: 0;
 }
 @media screen and (min-width: 640px) {
-  /* line 146, ../../../scss/_admin.scss */
+  /* line 148, ../../../scss/_admin.scss */
   #add-group input[type="submit"] {
     float: left;
     margin-left: 2%;
@@ -599,7 +601,7 @@ header h1 {
   }
 }
 
-/* line 154, ../../../scss/_admin.scss */
+/* line 156, ../../../scss/_admin.scss */
 .add-guest input {
   float: left;
   margin-left: 2%;
@@ -610,11 +612,11 @@ header h1 {
   margin-left: 0;
 }
 
-/* line 158, ../../../scss/_admin.scss */
+/* line 160, ../../../scss/_admin.scss */
 input.accordion {
   display: none;
 }
-/* line 162, ../../../scss/_admin.scss */
+/* line 164, ../../../scss/_admin.scss */
 input.accordion + label {
   display: block;
   -moz-transition: background-color 0.3s, color 0.3s;
@@ -623,11 +625,11 @@ input.accordion + label {
   transition: background-color 0.3s, color 0.3s;
   cursor: pointer;
 }
-/* line 166, ../../../scss/_admin.scss */
+/* line 168, ../../../scss/_admin.scss */
 input.accordion + label:hover {
   background-color: rgba(255, 251, 220, 0.5);
 }
-/* line 171, ../../../scss/_admin.scss */
+/* line 173, ../../../scss/_admin.scss */
 input.accordion ~ .accordion-container {
   overflow: hidden;
   overflow-y: scroll;
@@ -637,7 +639,7 @@ input.accordion ~ .accordion-container {
   transition: max-height 0.5s;
   max-height: 0;
 }
-/* line 176, ../../../scss/_admin.scss */
+/* line 178, ../../../scss/_admin.scss */
 input.accordion ~ .accordion-container .accordion-content {
   -moz-transition: -moz-transform 0.5s;
   -o-transition: -o-transform 0.5s;
@@ -651,22 +653,22 @@ input.accordion ~ .accordion-container .accordion-content {
   margin-top: 2%;
   background-color: rgba(255, 251, 220, 0.5);
 }
-/* line 186, ../../../scss/_admin.scss */
+/* line 188, ../../../scss/_admin.scss */
 input.accordion:checked + label {
   background-color: rgba(64, 51, 40, 0.8);
   color: #fffbdc;
 }
-/* line 191, ../../../scss/_admin.scss */
+/* line 193, ../../../scss/_admin.scss */
 input.accordion:checked ~ .accordion-container {
   max-height: 10em;
 }
 @media screen and (min-width: 640px) {
-  /* line 191, ../../../scss/_admin.scss */
+  /* line 193, ../../../scss/_admin.scss */
   input.accordion:checked ~ .accordion-container {
     max-height: 20em;
   }
 }
-/* line 196, ../../../scss/_admin.scss */
+/* line 198, ../../../scss/_admin.scss */
 input.accordion:checked ~ .accordion-container .accordion-content {
   -moz-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
@@ -674,12 +676,12 @@ input.accordion:checked ~ .accordion-container .accordion-content {
   transform: translate3d(0, 0, 0);
 }
 
-/* line 203, ../../../scss/_admin.scss */
+/* line 205, ../../../scss/_admin.scss */
 .row.even {
   background-color: rgba(255, 251, 220, 0.3);
 }
 
-/* line 208, ../../../scss/_admin.scss */
+/* line 210, ../../../scss/_admin.scss */
 .group-edit .field {
   float: left;
   margin-left: 2%;
@@ -691,7 +693,7 @@ input.accordion:checked ~ .accordion-container .accordion-content {
   margin-left: 0;
 }
 @media screen and (min-width: 640px) {
-  /* line 208, ../../../scss/_admin.scss */
+  /* line 210, ../../../scss/_admin.scss */
   .group-edit .field {
     float: left;
     margin-left: 2%;
@@ -702,21 +704,21 @@ input.accordion:checked ~ .accordion-container .accordion-content {
     margin-left: 0;
   }
 }
-/* line 213, ../../../scss/_admin.scss */
+/* line 215, ../../../scss/_admin.scss */
 .group-edit .field input {
   width: 100%;
 }
-/* line 216, ../../../scss/_admin.scss */
+/* line 218, ../../../scss/_admin.scss */
 .group-edit .field label {
   text-align: center;
 }
 @media screen and (min-width: 640px) {
-  /* line 216, ../../../scss/_admin.scss */
+  /* line 218, ../../../scss/_admin.scss */
   .group-edit .field label {
     text-align: left;
   }
 }
-/* line 223, ../../../scss/_admin.scss */
+/* line 225, ../../../scss/_admin.scss */
 .group-edit .button {
   float: left;
   margin-left: 2%;
@@ -729,7 +731,7 @@ input.accordion:checked ~ .accordion-container .accordion-content {
   margin-left: 0;
 }
 
-/* line 230, ../../../scss/_admin.scss */
+/* line 232, ../../../scss/_admin.scss */
 .edit-guest input {
   float: left;
   margin-left: 2%;
@@ -740,11 +742,11 @@ input.accordion:checked ~ .accordion-container .accordion-content {
   margin-left: 0;
 }
 
-/* line 235, ../../../scss/_admin.scss */
+/* line 237, ../../../scss/_admin.scss */
 .summary {
   padding-top: 1em;
 }
-/* line 237, ../../../scss/_admin.scss */
+/* line 239, ../../../scss/_admin.scss */
 .summary table {
   border: 5px solid #fffbdc;
   border-collapse: collapse;
@@ -756,7 +758,7 @@ input.accordion:checked ~ .accordion-container .accordion-content {
   width: 83%;
 }
 @media only screen and (min-width: 640px) {
-  /* line 237, ../../../scss/_admin.scss */
+  /* line 239, ../../../scss/_admin.scss */
   .summary table {
     float: none;
     margin-left: auto;
@@ -764,20 +766,20 @@ input.accordion:checked ~ .accordion-container .accordion-content {
     width: 49%;
   }
 }
-/* line 246, ../../../scss/_admin.scss */
+/* line 248, ../../../scss/_admin.scss */
 .summary table td {
   padding: 0.5em;
   text-align: center;
 }
-/* line 249, ../../../scss/_admin.scss */
+/* line 251, ../../../scss/_admin.scss */
 .summary table td:last-of-type {
   border-left: 1px solid #fffbdc;
 }
-/* line 253, ../../../scss/_admin.scss */
+/* line 255, ../../../scss/_admin.scss */
 .summary table tr {
   border-bottom: 1px solid #fffbdc;
 }
-/* line 255, ../../../scss/_admin.scss */
+/* line 257, ../../../scss/_admin.scss */
 .summary table tr:last-of-type {
   border-bottom: none;
 }
@@ -1233,4 +1235,56 @@ input.accordion:checked ~ .accordion-container .accordion-content {
 /* line 260, ../../../scss/_rsvp.scss */
 .guest-rsvp input[type="submit"] {
   font-size: 2em;
+}
+
+/* line 265, ../../../scss/_rsvp.scss */
+.countdown {
+  margin: 1em auto 0;
+  max-width: 12em;
+}
+@media only screen and (min-width: 1280px) {
+  /* line 265, ../../../scss/_rsvp.scss */
+  .countdown {
+    max-width: none;
+    padding: 0.25em;
+  }
+}
+
+/* line 274, ../../../scss/_rsvp.scss */
+.time {
+  background-color: rgba(255, 251, 220, 0.5);
+  color: #403328;
+  font-size: 2.5em;
+  line-height: 1.5;
+  border-bottom: 3px solid #fffbdc;
+}
+/* line 280, ../../../scss/_rsvp.scss */
+.time:last-of-type {
+  border-bottom: none;
+}
+@media only screen and (min-width: 1280px) {
+  /* line 274, ../../../scss/_rsvp.scss */
+  .time {
+    padding: 0 0.25em;
+    border-bottom: none;
+    border-right: 3px solid #fffbdc;
+    display: inline-block;
+    width: 3.5em;
+  }
+  /* line 289, ../../../scss/_rsvp.scss */
+  .time:last-of-type {
+    border-right: none;
+  }
+}
+
+/* line 295, ../../../scss/_rsvp.scss */
+h1.home {
+  font-size: 2.5em;
+  line-height: 1.25;
+}
+@media only screen and (min-width: 1280px) {
+  /* line 295, ../../../scss/_rsvp.scss */
+  h1.home {
+    font-size: 4em;
+  }
 }

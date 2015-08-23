@@ -1,4 +1,24 @@
 {% extends "base.html" %}
+
 {% block content %}
-<div class="row"><h1>Gina and Wes are engaged to be married!</h1></div>
+<h1 class="center row home">Wes &amp; Gina Are Engaged!</h1>
+<div class="row center">
+    <div class="countdown">
+        <div class="time">
+          <span class="timeData" id="days"></span><span class="label"> Days</span>
+        </div><div class="time">
+          <span class="timeData" id="hrs"></span><span class="label"> Hours</span>
+        </div><div class="time">
+          <span class="timeData" id="min"></span><span class="label"> Minutes</span>
+        </div><div class="time">
+          <span class="timeData" id="sec"></span><span class="label"> Seconds</span></div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/countdown.js') }}"></script>
 {% endblock %}
