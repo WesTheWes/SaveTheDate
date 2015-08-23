@@ -14,8 +14,17 @@ html, body {
 }
 
 body {
-    background: url("../images/beach.jpg") fixed no-repeat center top;
+    background: url("../images/beach-small.jpg") fixed no-repeat center top;
     background-size: cover;
+    @media only screen and (min-width: $break-small){
+        background-image: url("../images/beach-med.jpg");
+    }
+    @media only screen and (min-width: $break-med){
+        background-image: url("../images/beach-large.jpg");
+    }
+    @media only screen and (min-width: $break-large){
+        background-image: url("../images/beach-xl.jpg");
+    }
 }
 
 body,input, p, label {
