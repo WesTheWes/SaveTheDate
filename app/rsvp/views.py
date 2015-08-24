@@ -46,7 +46,15 @@ def guest_rsvp():
                 flash('Please respond for all guests.')
                 show_form = 'true'
             return render_template('rsvp.html', group=group, form=form, show_form=show_form)
-    return render_template('rsvp.html', show_form=show_form)
+    else:
+        class Custom_Form(forms.GuestRSVP):
+            pass
+        setattr(Custom_Form, 'You!', \
+            RadioField('Coming?', choices = \
+            [('Accept', ''), ('Regret', '')], \
+            validators=[DataRequired()]))
+        form = Custom_Form()
+    return render_template('rsvp.html', form=form, show_form=show_form)
 
 @rsvp.route('/success/')
 def success():

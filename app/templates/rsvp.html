@@ -20,8 +20,8 @@
         <div class="alert fill">{{ message }}</div>
 
         {% endfor %}
-        {% if group %}
-        <form method="POST" action="{{ url_for('rsvp.guest_rsvp') }}">
+
+        <form method="POST" {% if group %}action="{{ url_for('rsvp.guest_rsvp') }}"{% endif %}>
             <div class="row">
                 {{ form.csrf_token }}
                 <div class="guest-rsvp form-header">
@@ -44,12 +44,6 @@
             </div>
             <div class="row">{{ form.submit(class="bottom-large large center") }}</div>
         </form>
-
-        {% else %}
-
-        <h1 class="center">CHECK YOUR EMAIL MOTHERFUCKER!!!!</h1>
-
-        {% endif %}
 
         </div>
     </div>

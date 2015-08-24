@@ -5,12 +5,12 @@ class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY')
 
     MAIL_SERVER = os.environ.get('MAIL_SERVER')
-    MAIL_PORT = 587
-    MAIL_USE_TLS = True
+    MAIL_PORT = os.environ.get('MAIL_PORT')
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
+    MAIL_USE_SSL = True
     MAIL_SUBJECT_PREFIX = '[KaplanEverAfter] '
-    MAIL_SENDER = 'Gina And Wes <Wina@KaplanEverAfter.com>'
+    MAIL_SENDER = 'Gina And Wes Kaplan <GinaAndWes@KaplanEverAfter.com>'
 
     @staticmethod
     def init_app(app):
@@ -25,6 +25,7 @@ class DevelopmentConfig(Config):
 
 class ProductionConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+    SERVER_NAME = os.environ.get('SERVER_NAME')
 
 config = {
     'developement' : DevelopmentConfig,
