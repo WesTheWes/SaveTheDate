@@ -11,7 +11,8 @@
     {% for group in groups %}
         <div class="row">
             <div class="email group name">{{ group.name }}</div>
-            <div class="email send"><a class="button" href="{{url_for('auth.send_invite', id=group.id)}}">Send Email</a></div>
+            <div class="email group" id="email">{{ group.email }}</div>
+            <div class="email group send buttons"><a class="button" href="{{url_for('auth.send_invite', id=group.id)}}">Send Email</a></div>
         </div>
     {% endfor %}
     </div>

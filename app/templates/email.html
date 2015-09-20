@@ -1,7 +1,54 @@
-<h1>Hi {{ group.name }}!</h1>
-
-<p>Guess what?! Gina and Wes are gettin married!</p>
-
-<p>It's happening July 3rd, 2016... So <a href="{{ link }}">click here</a> to RSVP!!!!!!!!</p>
-
-<p>MMMMMKAY BYE</p>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+    <title>Save the Date!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body bgcolor="#fffbdc" style="margin: 0; padding: 0">
+    <table bgcolor="#fffbdc" border="0" cellpadding="20" cellspacing="0" width="100%" style="background-color: #fffbdc;">
+    <tr>
+        <td>
+            <table align="center" border="0" cellpading="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                <tr>
+                    <td style="padding: 20px 20px 20px 20px; border: 5px solid #403328; border-radius: 25px;">
+                        <table align="center" border="0" cellpading="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+                            <tr>
+                                <td>
+                                    <center>
+                                    <img src="{{url_for('static', _external=True, filename='images/HeartAndArrows.png')}}"></center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: 36px; font-family: Georgia, Times, serif; color: #403328"><center>
+                                    <img src="{{url_for('static', _external=True, filename='images/GinaAndWes.png')}}" alt="Gina LaPato &amp; Wes Kaplan" style="margin-top: 20px;">
+                                </center></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <center>
+                                        <p style="color: #403328; font-family: Arial, Helvetica, sans-serif; font-size: 24px; line-height: 8px;">are delighted to introduce</p>
+                                        <p style="color: #403328; font-family: Arial, Helvetica, sans-serif; font-size: 24px; line-height: 8px; ">their wedding date</p>
+                                    </center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                <center><p><a style="font-family: Arial, Helvetica, sans-serif; font-size: 24px; color: #da4c4c;" href="{{link}}">Click here to save the date</a></p></center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <center>
+                                    <img src="{{url_for('static', _external=True, filename='images/HeartAndArrows.png')}}" style="margin-top: 20px;"></center>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    </table>
+</body>
+</html>

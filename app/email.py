@@ -27,7 +27,7 @@ def send_email(groups, template):
         return thr
 
 def create_message(group, template):
-    msg = Message(current_app.config['MAIL_SUBJECT_PREFIX'] + ' Invitation for' + group.name,
+    msg = Message(current_app.config['MAIL_SUBJECT_PREFIX'] + ' Invitation for ' + group.name,
         sender=current_app.config['MAIL_SENDER'], recipients=[group.email])
     link = url_for('rsvp.guest_rsvp', group_token=group.generate_group_token(), _external=True)
     msg.body = render_template(template + '.txt', group=group, link=link)

@@ -1,9 +1,7 @@
-Hi {{ group.name }}!
+Gina LaPato & Wes Kaplan
 
-Guess what?! Gina and Wes are gettin married!
+are delighted to introduce
+their wedding date!
 
-It's happening July 3rd, 2016... So click on the following link to RSVP!!!!!!!!
-
+Click the following link to save the date:
 {{ link }}
-
-MMMMMKAY BYE :-P
