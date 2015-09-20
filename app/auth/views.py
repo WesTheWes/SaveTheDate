@@ -48,7 +48,7 @@ def admin():
             db.session.commit()
             groups = Group.query.all()
             return redirect(url_for('auth.admin', group=group.id))
-    groups = Group.query.all()
+    groups = Group.query.order_by("id").all()
     return render_template('admin.html', add_group=add_group, group_id=group_id, groups=groups, group_form=group_form, guest_form=guest_form)
 
 @auth.route('/admin/<int:id>/', methods=['GET', 'POST'])
