@@ -1,7 +1,9 @@
+{{group.name}},
+
+************************
 Gina LaPato & Wes Kaplan
+************************
 
-are delighted to introduce
-their wedding date!
+are delighted to introduce their wedding date!
 
-Click the following link to save the date:
-{{ link }}
+Click Here to Save the Date ( https://github.com/leemunroe/html-email-template )
